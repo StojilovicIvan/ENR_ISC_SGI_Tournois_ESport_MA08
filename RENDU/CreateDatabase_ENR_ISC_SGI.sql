@@ -220,4 +220,19 @@ REFERENCES Matches(id)
 ALTER TABLE Broadcast WITH CHECK ADD  CONSTRAINT FK_MatchBroadcast_Broadcast FOREIGN KEY(Broadcast_id)
 REFERENCES Broadcasts(id)
 
+ALTER TABLE Commentators
+ADD CHECK (Age>=18); 
+
+ALTER TABLE Players
+ADD CHECK ((Age>=18) AND (Age<=40)); 
+
+ALTER TABLE Tournaments WITH CHECK ADD  CONSTRAINT FK_Tournament_Match_id FOREIGN KEY (Match_id)
+REFERENCES Matches(id)
+ON DELETE CASCADE;
+
+ALTER TABLE Commentators WITH CHECK ADD  CONSTRAINT FK_Commentator_Match_id FOREIGN KEY (Match_id)
+REFERENCES Matches(id)
+ON DELETE CASCADE
+
+
 GO
