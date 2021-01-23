@@ -105,7 +105,7 @@ CREATE TABLE Organizations (
 
 CREATE TABLE Sponsors (
   	id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-  	Name varchar(40) UNIQUE NOT NULL
+  	Name varchar(70) UNIQUE NOT NULL
  );
 
  CREATE TABLE Sponsor (
